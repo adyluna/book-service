@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:13
+    container_name: db
+    platform: linux/x86_64
+    ports:
+      - 5432:5432
+    restart: 'always'
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    cap_add:
+      - SYS_NICE # Deve omitir alertas menores
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
