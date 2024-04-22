@@ -1,6 +1,6 @@
 # Coverage Report.
 # ~~
-name: Coverage Report
+name: Test Coverage Report
 on:
   pull_request:
     branches:
