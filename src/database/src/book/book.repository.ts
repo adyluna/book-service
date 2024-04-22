@@ -11,21 +11,21 @@ export class BookRepository {
   }
 
   /**
-   * Mocks the creation of a book in the database.
+   * Mocks the creation of a service in the database.
    * @param obj Object with data for persistence.
    * @returns Book.
    */
   create(obj: any): Promise<Book> {
-    // Mock the book creation
+    // Mock the service creation
     const book = new Book();
     Object.assign(book, obj);
     return Promise.resolve(book);
   }
 
   /**
-   * Mocks finding a book by its ID.
+   * Mocks finding a service by its ID.
    *
-   * @param {number} id The ID of the book.
+   * @param {number} id The ID of the service.
    */
   findById(id: number): Promise<Book> {
     return this._book.findByPk(id);

@@ -11,21 +11,21 @@ export class BookService {
   private readonly _logger = new Logger(BookService.name);
 
   /**
-   * Creates a new book.
+   * Creates a new service.
    *
-   * @param bookData Data of the book to be created.
-   * @returns The created book.
+   * @param bookData Data of the service to be created.
+   * @returns The created service.
    */
   async createBook(bookData: Partial<Book>): Promise<Book> {
-    this._logger.log('Creating a new book');
+    this._logger.log('Creating a new service');
     return this._bookRepository.create(bookData);
   }
 
   /**
-   * Finds a book by its ID.
+   * Finds a service by its ID.
    *
-   * @param id The ID of the book to find.
-   * @returns The found book.
+   * @param id The ID of the service to find.
+   * @returns The found service.
    */
   async findBookById(id: number): Promise<Book> {
     this._logger.log(`Finding a book with ID ${id}`);
