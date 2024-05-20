@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { BookService } from './book.service';
 import { BookController } from './book.controller';
-import { Book } from '../database/src/book/book.entity';
-import { BookRepository } from '../database/src/book/book.repository';
+import { Book } from '../../database/src/book';
+import { BookRepository } from '../../database/src/book';
 
 @Module({
   imports: [
