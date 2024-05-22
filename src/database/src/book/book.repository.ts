@@ -7,8 +7,7 @@ export class BookRepository {
   constructor(
     @InjectModel(Book)
     private readonly _book: typeof Book,
-  ) {
-  }
+  ) {}
 
   /**
    * Mocks the creation of a service in the database.

@@ -1,4 +1,4 @@
-import { BookService } from '../../src/book/book.service';
+import { BookService } from '../../src/module/book/book.service';
 import { Test, TestingModule } from '@nestjs/testing';
 import { bookServiceProviders } from '../utils/model.utils';
 
