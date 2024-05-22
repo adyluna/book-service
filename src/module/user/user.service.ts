@@ -1,6 +1,6 @@
 import { UserRepository } from '../../database/src/user/user.repository';
 import { User } from '../../database/src/user/user.entity';
-import { Injectable, Logger } from '@nestjs/common';
+import { HttpException, Injectable, Logger } from '@nestjs/common';
 import { CreateUserForm } from './user.form';
 
 @Injectable()
@@ -12,7 +12,11 @@ export class UserService {
   private readonly _logger = new Logger(UserService.name);
 
   async findUserById(id: number): Promise<User> {
-    return this._userRepository.findById(id);
+    const user = await this._userRepository.findById(id);
+    if (!user) {
+      throw new HttpException((`User with id ${id} not found`), 404);
+    }
+    return user;
   }
 
   async createUser(userData: CreateUserForm): Promise<any> {
@@ -30,6 +34,6 @@ export class UserService {
   }
 
   async findByEmail(email: string): Promise<User> {
-    return this._userRepository.findByEmail(email);
+    return await this._userRepository.findByEmail(email);
   }
 }

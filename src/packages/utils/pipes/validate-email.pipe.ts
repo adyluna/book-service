@@ -12,6 +12,5 @@ export class ValidateEmailPipe implements PipeTransform {
       throw new HttpException('Email already exists', HttpStatus.BAD_REQUEST);
     }
     return createUserForm;
-
   }
 }

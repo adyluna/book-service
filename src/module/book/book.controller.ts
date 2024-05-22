@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Request } from '@nestjs/common';
 import { Book } from '../../database/src/book';
 import { BookService } from './book.service';
 
@@ -13,7 +13,8 @@ export class BookController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: number): Promise<Book> {
+  async findOne(@Param('id') id: number, @Request() req): Promise<Book> {
+    console.log(req.user);
     return this._bookService.findBookById(id);
   }
 }

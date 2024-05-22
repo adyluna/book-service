@@ -10,7 +10,7 @@ export class UserController {
 
   @Get(':id')
   async findUserById(@Param('id') id: number) {
-    return this.userService.findUserById(id);
+    return await this.userService.findUserById(id);
   }
 
   @Post()
