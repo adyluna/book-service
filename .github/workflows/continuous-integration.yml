@@ -1,6 +1,6 @@
 # Coverage Report.
 # ~~
-name: Test Coverage Report
+name: CI
 on:
   push:
     branches: [ '*' ]
