@@ -53,3 +53,8 @@ jobs:
           name: book-service-app
           # A file, directory or wildcard pattern that describes what to upload
           path: dist
+
+  docker:
+    needs: build
+    uses: ./.github/workflows/Docker.yml
+    secrets: inherit
