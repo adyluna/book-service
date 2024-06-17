@@ -2,11 +2,10 @@
 # ~~
 name: Test Coverage Report
 on:
+  push:
+    branches: [ '*' ]
   pull_request:
-    branches:
-      - main
-      - release/*
-      - test/*
+    branches: [ '*' ]
 
 jobs:
   coverage:
